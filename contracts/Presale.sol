@@ -45,7 +45,7 @@ contract Presale is CommonCrowdsale {
 
   function createTokens() public payable saleIsOn {
     balances[msg.sender] = balances[msg.sender].add(msg.value);
-    calculateAndTransferTokens();
+    calculateAndTransferTokens(msg.sender, msg.value);
     if(!softcapAchieved && invested >= softcap) {
       softcapAchieved = true;      
     }

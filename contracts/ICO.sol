@@ -10,7 +10,7 @@ contract ICO is CommonCrowdsale {
   }
 
   function createTokens() public payable saleIsOn {
-    calculateAndTransferTokens();
+    calculateAndTransferTokens(msg.sender, msg.value);
     wallet.transfer(msg.value);
   } 
 

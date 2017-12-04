@@ -39,6 +39,8 @@ contract CommonCrowdsale is Ownable, LockableChanges {
 
   uint public advisorsTokensPercent;
 
+  address public directMintAgent;
+
   struct Bonus {
     uint periodInDays;
     uint bonus;
@@ -114,6 +116,19 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     bonuses.push(Bonus(limit, bonus));
   }
 
+  modifier onlyDirectMintAgentOrOwner() {
+    require(directMintAgent == msg.sender || owner == msg.sender);
+    _;
+  }
+
+  function setDirectMintAgent(address newDirectMintAgent) public onlyOwner {
+    directMintAgent = newDirectMintAgent;
+  }
+
+  function directMint(address to, uint investedWei) public onlyDirectMintAgentOrOwner saleIsOn {
+    calculateAndTransferTokens(to, investedWei);
+  }
+
   function mintExtendedTokens() internal {
     uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent);      
     uint extendedTokens = minted.mul(extendedTokensPercent).div(PERCENT_RATE.sub(extendedTokensPercent));
@@ -134,9 +149,9 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     minted = minted.add(amount);
   }
 
-  function calculateAndTransferTokens() internal {
+  function calculateAndTransferTokens(address to, uint investedInWei) internal {
     // update invested value
-    invested = invested.add(msg.value);
+    invested = invested.add(investedInWei);
 
     // calculate tokens
     uint tokens = msg.value.mul(price).div(1 ether);
@@ -146,7 +161,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     }
     
     // transfer tokens
-    mintAndSendTokens(msg.sender, tokens);
+    mintAndSendTokens(to, tokens);
   }
 
   function getBonus() public constant returns(uint) {
