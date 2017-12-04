@@ -5,23 +5,24 @@ import './GENSharesToken.sol';
 import './Presale.sol';
 import './ICO.sol';
 
+
 contract Deployer is Ownable {
 
-  Presale public presale;  
- 
+  Presale public presale;
+
   ICO public ico;
 
   GENSharesToken public token;
 
   function deploy() public onlyOwner {
-    owner = 0x379264aF7df7CF8141a23bC989aa44266DDD2c62;  
-      
+    owner = 0x379264aF7df7CF8141a23bC989aa44266DDD2c62;
+
     token = new GENSharesToken();
-    
+
     presale = new Presale();
     presale.setToken(token);
     token.setSaleAgent(presale);
-    presale.setMinInvestedLimit(100000000000000000);  
+    presale.setMinInvestedLimit(100000000000000000);
     presale.setPrice(250000000000000000000);
     presale.setBountyTokensPercent(4);
     presale.setAdvisorsTokensPercent(2);
@@ -32,7 +33,7 @@ contract Deployer is Ownable {
     presale.addBonus(7,40);
     presale.addBonus(100,35);
     presale.setStart(1511571600);
-    presale.setEnd(1514156400);    
+    presale.setEnd(1514156400);
     presale.setDevLimit(6000000000000000000);
     presale.setWallet(0x4bB656423f5476FeC4AA729aB7B4EE0fc4d0B314);
     presale.setBountyTokensWallet(0xcACBE5d8Fb017407907026804Fe8BE64B08511f4);
@@ -41,7 +42,7 @@ contract Deployer is Ownable {
     presale.setDevWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770);
 
     ico = new ICO();
-    ico.setToken(token); 
+    ico.setToken(token);
     presale.setNextSaleAgent(ico);
     ico.setMinInvestedLimit(100000000000000000);
     ico.setPrice(250000000000000000000);
@@ -61,7 +62,7 @@ contract Deployer is Ownable {
 
     presale.lockChanges();
     ico.lockChanges();
-    
+
     presale.transferOwnership(owner);
     ico.transferOwnership(owner);
     token.transferOwnership(owner);

@@ -5,6 +5,7 @@ import 'zeppelin-solidity/contracts/math/SafeMath.sol';
 import './LockableChanges.sol';
 import './GENSharesToken.sol';
 
+
 contract CommonCrowdsale is Ownable, LockableChanges {
 
   using SafeMath for uint256;
@@ -24,7 +25,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   uint public invested;
 
   uint public minted;
-  
+
   address public wallet;
 
   address public bountyTokensWallet;
@@ -55,48 +56,48 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     _;
   }
 
-  function setHardcap(uint newHardcap) public onlyOwner notLocked { 
+  function setHardcap(uint newHardcap) public onlyOwner notLocked {
     hardcap = newHardcap;
   }
- 
-  function setStart(uint newStart) public onlyOwner notLocked { 
+
+  function setStart(uint newStart) public onlyOwner notLocked {
     start = newStart;
   }
 
-  function setBountyTokensPercent(uint newBountyTokensPercent) public onlyOwner notLocked { 
+  function setBountyTokensPercent(uint newBountyTokensPercent) public onlyOwner notLocked {
     bountyTokensPercent = newBountyTokensPercent;
   }
 
-  function setAdvisorsTokensPercent(uint newAdvisorsTokensPercent) public onlyOwner notLocked { 
+  function setAdvisorsTokensPercent(uint newAdvisorsTokensPercent) public onlyOwner notLocked {
     advisorsTokensPercent = newAdvisorsTokensPercent;
   }
 
-  function setDevTokensPercent(uint newDevTokensPercent) public onlyOwner notLocked { 
+  function setDevTokensPercent(uint newDevTokensPercent) public onlyOwner notLocked {
     devTokensPercent = newDevTokensPercent;
   }
 
-  function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner notLocked { 
+  function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner notLocked {
     bountyTokensWallet = newBountyTokensWallet;
   }
 
-  function setAdvisorsTokensWallet(address newAdvisorsTokensWallet) public onlyOwner notLocked { 
+  function setAdvisorsTokensWallet(address newAdvisorsTokensWallet) public onlyOwner notLocked {
     advisorsTokensWallet = newAdvisorsTokensWallet;
   }
 
-  function setDevTokensWallet(address newDevTokensWallet) public onlyOwner notLocked { 
+  function setDevTokensWallet(address newDevTokensWallet) public onlyOwner notLocked {
     devTokensWallet = newDevTokensWallet;
   }
 
-  function setEnd(uint newEnd) public onlyOwner notLocked { 
+  function setEnd(uint newEnd) public onlyOwner notLocked {
     require(start < newEnd);
     end = newEnd;
   }
 
-  function setToken(address newToken) public onlyOwner notLocked { 
+  function setToken(address newToken) public onlyOwner notLocked {
     token = GENSharesToken(newToken);
   }
 
-  function setWallet(address newWallet) public onlyOwner notLocked { 
+  function setWallet(address newWallet) public onlyOwner notLocked {
     wallet = newWallet;
   }
 
@@ -107,7 +108,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   function setMinInvestedLimit(uint newMinInvestedLimit) public onlyOwner notLocked {
     minInvestedLimit = newMinInvestedLimit;
   }
- 
+
   function bonusesCount() public constant returns(uint) {
     return bonuses.length;
   }
@@ -130,7 +131,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   }
 
   function mintExtendedTokens() internal {
-    uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent);      
+    uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent);
     uint extendedTokens = minted.mul(extendedTokensPercent).div(PERCENT_RATE.sub(extendedTokensPercent));
     uint summaryTokens = extendedTokens + minted;
 
@@ -156,10 +157,10 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     // calculate tokens
     uint tokens = msg.value.mul(price).div(1 ether);
     uint bonus = getBonus();
-    if(bonus > 0) {
-      tokens = tokens.add(tokens.mul(bonus).div(100));      
+    if (bonus > 0) {
+      tokens = tokens.add(tokens.mul(bonus).div(100));
     }
-    
+
     // transfer tokens
     mintAndSendTokens(to, tokens);
   }

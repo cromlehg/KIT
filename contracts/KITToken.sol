@@ -3,22 +3,23 @@ pragma solidity ^0.4.18;
 import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
 import 'zeppelin-solidity/contracts/token/StandardToken.sol';
 
-contract KITToken is StandardToken, Ownable {	
+
+contract KITToken is StandardToken, Ownable {
 
   using SafeMath for uint256;
 
   event Mint(address indexed to, uint256 amount);
 
   event MintFinished();
-    
-  string public constant name = "KIT";
-   
-  string public constant symbol = "KIT";
-    
+
+  string public constant name = 'KIT';
+
+  string public constant symbol = 'KIT';
+
   uint32 public constant decimals = 18;
 
   bool public mintingFinished = false;
- 
+
   address public saleAgent;
 
   modifier notLocked() {
