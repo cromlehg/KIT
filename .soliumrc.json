@@ -16,6 +16,7 @@
       "warning",
       3
     ],
-    "uppercase": 0
+    "uppercase": 0,
+    "mixedcase": 0
   }
 }
