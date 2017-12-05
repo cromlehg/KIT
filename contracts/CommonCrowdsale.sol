@@ -1,9 +1,9 @@
 pragma solidity ^0.4.18;
 
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
-import 'zeppelin-solidity/contracts/math/SafeMath.sol';
-import './LockableChanges.sol';
-import './GENSharesToken.sol';
+import './ownership/Ownable.sol';
+import './math/SafeMath.sol';
+import './lifecycle/LockableChanges.sol';
+import './KITToken.sol';
 
 
 contract CommonCrowdsale is Ownable, LockableChanges {
@@ -49,7 +49,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
 
   Bonus[] public bonuses;
 
-  GENSharesToken public token;
+  KITToken public token;
 
   modifier saleIsOn() {
     require(msg.value >= minInvestedLimit && now >= start && now < end && invested < hardcap);
@@ -94,7 +94,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   }
 
   function setToken(address newToken) public onlyOwner notLocked {
-    token = GENSharesToken(newToken);
+    token = KITToken(newToken);
   }
 
   function setWallet(address newWallet) public onlyOwner notLocked {

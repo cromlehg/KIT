@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
-import './GENSharesToken.sol';
+import './ownership/Ownable.sol';
+import './KITToken.sol';
 import './Presale.sol';
 import './ICO.sol';
 
@@ -12,12 +12,12 @@ contract Deployer is Ownable {
 
   ICO public ico;
 
-  GENSharesToken public token;
+  KITToken public token;
 
   function deploy() public onlyOwner {
     owner = 0x379264aF7df7CF8141a23bC989aa44266DDD2c62;
 
-    token = new GENSharesToken();
+    token = new KITToken();
 
     presale = new Presale();
     presale.setToken(token);
