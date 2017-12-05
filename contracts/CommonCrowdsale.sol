@@ -34,11 +34,15 @@ contract CommonCrowdsale is Ownable, LockableChanges {
 
   address public advisorsTokensWallet;
 
+  address public foundersTokensWallet;
+
   uint public bountyTokensPercent;
 
   uint public devTokensPercent;
 
   uint public advisorsTokensPercent;
+
+  uint public foundersTokensPercent;
 
   address public directMintAgent;
 
@@ -76,6 +80,10 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     devTokensPercent = newDevTokensPercent;
   }
 
+  function setFoundersTokensPercent(uint newFoundersTokensPercent) public onlyOwner notLocked {
+    foundersTokensPercent = newFoundersTokensPercent;
+  }
+
   function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner notLocked {
     bountyTokensWallet = newBountyTokensWallet;
   }
@@ -86,6 +94,10 @@ contract CommonCrowdsale is Ownable, LockableChanges {
 
   function setDevTokensWallet(address newDevTokensWallet) public onlyOwner notLocked {
     devTokensWallet = newDevTokensWallet;
+  }
+
+  function setFoundersTokensWallet(address newFoundersTokensWallet) public onlyOwner notLocked {
+    foundersTokensWallet = newFoundersTokensWallet;
   }
 
   function setEnd(uint newEnd) public onlyOwner notLocked {
@@ -131,7 +143,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   }
 
   function mintExtendedTokens() internal {
-    uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent);
+    uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent).add(foundersTokensPercent);
     uint extendedTokens = minted.mul(extendedTokensPercent).div(PERCENT_RATE.sub(extendedTokensPercent));
     uint summaryTokens = extendedTokens + minted;
 
@@ -140,6 +152,9 @@ contract CommonCrowdsale is Ownable, LockableChanges {
 
     uint advisorsTokens = summaryTokens.mul(advisorsTokensPercent).div(PERCENT_RATE);
     mintAndSendTokens(advisorsTokensWallet, advisorsTokens);
+
+    uint foundersTokens = summaryTokens.mul(foundersTokensPercent).div(PERCENT_RATE);
+    mintAndSendTokens(foundersTokensWallet, foundersTokens);
 
     uint devTokens = extendedTokens.sub(advisorsTokens).sub(bountyTokens);
     mintAndSendTokens(devTokensWallet, devTokens);
