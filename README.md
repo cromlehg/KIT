@@ -59,12 +59,12 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Minimal insvested limit_    : 0.01 ETH
 * _Softcap_                    : 20 ETH
 * _Hardcap_                    : 63 000 ETH
-* _Founders                    : 10% of total tokens
+* _Founders_                   : 10% of total tokens
 * _Bounty_                     : 3% of total tokens
 * _Advisors_                   : 1% of total tokens
 * _Developers_                 : 4% of total tokens
 * _Start_                      : Wed, 20 Dec 2017 13:00:00 GMT 
-* _End_                        : Mon, 01 Jan 2018 13:00:00 GMT
+* _End_                        : Thu, 25 Jan 2018 13:00:00 GMT
 * _Founders tokens wallet_     : 
 * _Bounty tokens wallet_       : 
 * _Advisors tokens wallet_     : 
@@ -83,12 +83,12 @@ _Milestones_
 * _Base price_                 : 909 KIT per ETH
 * _Minimal insvested limit_    : 0.01 ETH
 * _Hardcap_                    : 67 500 ETH
-* _Founders                    : 10% of total tokens
+* _Founders_                   : 10% of total tokens
 * _Bounty_                     : 3% of total tokens
 * _Advisors_                   : 1% of total tokens
 * _Developers_                 : 4% of total tokens
-* _Start_                      : Thu, 25 Jan 2018 13:00:00 GMT 
-* _End_                        : Wed, 28 Feb 2018 13:00:00 GMT
+* _Start_                      : Tue, 20 Feb 2018 13:00:00 GMT 
+* _End_                        : Tue, 20 Mar 2018 13:00:00 GMT
 * _Founders tokens wallet_     : 
 * _Bounty tokens wallet_       : 
 * _Advisors tokens wallet_     : 
