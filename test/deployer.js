@@ -17,18 +17,18 @@ const Deployer = artifacts.require('Deployer')
 contract('Deployer', function(wallets) {
 
   const notOwner = wallets[1]
-  
+
   const newAddr = wallets[2]
-  
+
   before(async function() {
     //Advance to the next block to correctly read time in the solidity "now" function interpreted by testrpc
     await advanceBlock()
   })
-  
+
   beforeEach(async function () {
     this.deployer = await Deployer.new()
-  })	 
-  
+  })
+
   describe('not owner reject tests', function () {
 
       it('deploy reject if not owner', async function () {

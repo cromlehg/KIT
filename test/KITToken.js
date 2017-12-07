@@ -12,23 +12,23 @@ const should = require('chai')
   .use(require('chai-bignumber')(BigNumber))
   .should()
 
-const GENSharesToken = artifacts.require('GENSharesToken')
+const KITToken = artifacts.require('KITToken')
 
-contract('GENSharesToken', function(wallets) {
+contract('KITToken', function(wallets) {
 
   const notOwner = wallets[1]
-  
+
   const newAddr = wallets[2]
-  
+
   before(async function() {
     //Advance to the next block to correctly read time in the solidity "now" function interpreted by testrpc
     await advanceBlock()
   })
-  
+
   beforeEach(async function () {
-    this.gENSharesToken = await GENSharesToken.new()
-  })	 
-  
+    this.gENSharesToken = await KITToken.new()
+  })
+
   describe('not owner reject tests', function () {
 
       it('setSaleAgent reject if not owner', async function () {

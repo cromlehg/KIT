@@ -17,18 +17,18 @@ const Presale = artifacts.require('Presale')
 contract('Presale', function(wallets) {
 
   const notOwner = wallets[1]
-  
+
   const newAddr = wallets[2]
-  
+
   before(async function() {
     //Advance to the next block to correctly read time in the solidity "now" function interpreted by testrpc
     await advanceBlock()
   })
-  
+
   beforeEach(async function () {
     this.presale = await Presale.new()
-  })	 
-  
+  })
+
   describe('not owner reject tests', function () {
 
       it('setNextSaleAgent reject if not owner', async function () {

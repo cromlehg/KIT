@@ -17,18 +17,18 @@ const LockableChanges = artifacts.require('LockableChanges')
 contract('LockableChanges', function(wallets) {
 
   const notOwner = wallets[1]
-  
+
   const newAddr = wallets[2]
-  
+
   before(async function() {
     //Advance to the next block to correctly read time in the solidity "now" function interpreted by testrpc
     await advanceBlock()
   })
-  
+
   beforeEach(async function () {
     this.lockableChanges = await LockableChanges.new()
-  })	 
-  
+  })
+
   describe('not owner reject tests', function () {
 
       it('lockChanges reject if not owner', async function () {
