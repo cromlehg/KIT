@@ -21,6 +21,29 @@ contract Presale is CommonCrowdsale {
 
   mapping (address => uint) public balances;
 
+  function Presale() public {
+    minInvestedLimit = 10000000000000000;
+    price = 1000000000000000000000;
+    bountyTokensPercent = 3;
+    advisorsTokensPercent = 1;
+    devTokensPercent = 4;
+    foundersTokensPercent = 10;
+    softcap = 20000000000000000000;
+    hardcap = 63000000000000000000000;
+    addBonus(7,42);
+    addBonus(7,25);
+    addBonus(7,11);
+    start = 1513774800;
+    end = 1516885200;
+    devLimit = 7000000000000000000;
+    wallet = 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4;
+    devWallet = 0x8f840bB49CD83Baad5a228728b2a6edAc828f446;
+    bountyTokensWallet = 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2;
+    foundersTokensWallet = 0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111;
+    advisorsTokensWallet = 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57;
+    devTokensWallet = 0x8f840bB49CD83Baad5a228728b2a6edAc828f446;
+  }
+
   function setNextSaleAgent(address newNextSaleAgent) public onlyOwner {
     nextSaleAgent = newNextSaleAgent;
   }
