@@ -75,7 +75,7 @@ contract Presale is CommonCrowdsale {
     }
   }
 
-  function widthrawDev() public {
+  function withdrawDev() public {
     require(softcapAchieved);
     require(devWallet == msg.sender || owner == msg.sender);
     if (!devWithdrawn) {
@@ -84,10 +84,10 @@ contract Presale is CommonCrowdsale {
     }
   }
 
-  function widthraw() public {
+  function withdraw() public {
     require(softcapAchieved);
     require(owner == msg.sender);
-    widthrawDev();
+    withdrawDev();
     wallet.transfer(this.balance);
   }
 
