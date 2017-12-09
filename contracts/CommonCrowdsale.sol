@@ -60,64 +60,64 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     _;
   }
 
-  function setHardcap(uint newHardcap) public onlyOwner notLocked {
+  function setHardcap(uint newHardcap) public onlyOwner {
     hardcap = newHardcap;
   }
 
-  function setStart(uint newStart) public onlyOwner notLocked {
+  function setStart(uint newStart) public onlyOwner {
     start = newStart;
   }
 
-  function setBountyTokensPercent(uint newBountyTokensPercent) public onlyOwner notLocked {
+  function setBountyTokensPercent(uint newBountyTokensPercent) public onlyOwner {
     bountyTokensPercent = newBountyTokensPercent;
   }
 
-  function setAdvisorsTokensPercent(uint newAdvisorsTokensPercent) public onlyOwner notLocked {
+  function setAdvisorsTokensPercent(uint newAdvisorsTokensPercent) public onlyOwner {
     advisorsTokensPercent = newAdvisorsTokensPercent;
   }
 
-  function setDevTokensPercent(uint newDevTokensPercent) public onlyOwner notLocked {
+  function setDevTokensPercent(uint newDevTokensPercent) public onlyOwner {
     devTokensPercent = newDevTokensPercent;
   }
 
-  function setFoundersTokensPercent(uint newFoundersTokensPercent) public onlyOwner notLocked {
+  function setFoundersTokensPercent(uint newFoundersTokensPercent) public onlyOwner {
     foundersTokensPercent = newFoundersTokensPercent;
   }
 
-  function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner notLocked {
+  function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner {
     bountyTokensWallet = newBountyTokensWallet;
   }
 
-  function setAdvisorsTokensWallet(address newAdvisorsTokensWallet) public onlyOwner notLocked {
+  function setAdvisorsTokensWallet(address newAdvisorsTokensWallet) public onlyOwner {
     advisorsTokensWallet = newAdvisorsTokensWallet;
   }
 
-  function setDevTokensWallet(address newDevTokensWallet) public onlyOwner notLocked {
+  function setDevTokensWallet(address newDevTokensWallet) public onlyOwner {
     devTokensWallet = newDevTokensWallet;
   }
 
-  function setFoundersTokensWallet(address newFoundersTokensWallet) public onlyOwner notLocked {
+  function setFoundersTokensWallet(address newFoundersTokensWallet) public onlyOwner {
     foundersTokensWallet = newFoundersTokensWallet;
   }
 
-  function setEnd(uint newEnd) public onlyOwner notLocked {
+  function setEnd(uint newEnd) public onlyOwner {
     require(start < newEnd);
     end = newEnd;
   }
 
-  function setToken(address newToken) public onlyOwner notLocked {
+  function setToken(address newToken) public onlyOwner {
     token = KITToken(newToken);
   }
 
-  function setWallet(address newWallet) public onlyOwner notLocked {
+  function setWallet(address newWallet) public onlyOwner {
     wallet = newWallet;
   }
 
-  function setPrice(uint newPrice) public onlyOwner notLocked {
+  function setPrice(uint newPrice) public onlyOwner {
     price = newPrice;
   }
 
-  function setMinInvestedLimit(uint newMinInvestedLimit) public onlyOwner notLocked {
+  function setMinInvestedLimit(uint newMinInvestedLimit) public onlyOwner {
     minInvestedLimit = newMinInvestedLimit;
   }
 
@@ -125,7 +125,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
     return bonuses.length;
   }
 
-  function addBonus(uint limit, uint bonus) public onlyOwner notLocked {
+  function addBonus(uint limit, uint bonus) public onlyOwner {
     bonuses.push(Bonus(limit, bonus));
   }
 

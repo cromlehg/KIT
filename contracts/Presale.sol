@@ -21,11 +21,11 @@ contract Presale is CommonCrowdsale {
 
   mapping (address => uint) public balances;
 
-  function setNextSaleAgent(address newNextSaleAgent) public onlyOwner notLocked {
+  function setNextSaleAgent(address newNextSaleAgent) public onlyOwner {
     nextSaleAgent = newNextSaleAgent;
   }
 
-  function setSoftcap(uint newSoftcap) public onlyOwner notLocked {
+  function setSoftcap(uint newSoftcap) public onlyOwner {
     softcap = newSoftcap;
   }
 
