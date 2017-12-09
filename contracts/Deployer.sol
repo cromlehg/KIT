@@ -15,7 +15,8 @@ contract Deployer is Ownable {
   KITToken public token;
 
   function deploy() public onlyOwner {
-    // owner = 0x379264aF7df7CF8141a23bC989aa44266DDD2c62;
+    owner = 0x55dd7A6353FC004B4F6Da9855F9403B35f4530B1;
+    // owner = msg.sender;
 
     token = new KITToken();
 
@@ -34,13 +35,16 @@ contract Deployer is Ownable {
     presale.addBonus(7,25);
     presale.addBonus(7,11);
     presale.setStart(1513774800);
-    // presale.setWallet(0x4bB656423f5476FeC4AA729aB7B4EE0fc4d0B314);
-    // presale.setBountyTokensWallet(0xcACBE5d8Fb017407907026804Fe8BE64B08511f4);
-    // presale.setDevTokensWallet(0xa20C62282bEC52F9dA240dB8cFFc5B2fc8586652);
-    // presale.setAdvisorsTokensWallet(0xD3D85a495c7E25eAd39793F959d04ACcDf87e01b);
-    // presale.setDevWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770);
     presale.setEnd(1516885200);
     presale.setDevLimit(6000000000000000000);
+
+    presale.setWallet(0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4);
+    presale.setDevWallet(0x8f840bB49CD83Baad5a228728b2a6edAc828f446);
+
+    presale.setBountyTokensWallet(0xDa67155b22973bE05Bcd28c07107b2E17314A1e2);
+    presale.setFoundersTokensWallet(0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111);
+    presale.setAdvisorsTokensWallet(0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57);
+    presale.setDevTokensWallet(0x8f840bB49CD83Baad5a228728b2a6edAc828f446);
 
     ico = new ICO();
     ico.setToken(token);
@@ -54,19 +58,20 @@ contract Deployer is Ownable {
     ico.setHardcap(67500000000000000000000);
     ico.addBonus(7,10);
     ico.addBonus(7,5);
-    // ico.setWallet(0x65954fb8f45b40c9A60dffF3c8f4F39839Bf3596);
-    // ico.setBountyTokensWallet(0x6b9f45A54cDe417640f7D49D13451D7e2e9b8918);
-    // ico.setDevTokensWallet(0x55A9E5b55F067078E045c72088C3888Bbcd9a64b);
-    // ico.setAdvisorsTokensWallet(0x3e11Ff0BDd160C1D85cdf04e012eA9286ae1A964);
     ico.setStart(1519131600);
     ico.setEnd(1521550800);
+    ico.setWallet(0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4);
+    ico.setBountyTokensWallet(0xDa67155b22973bE05Bcd28c07107b2E17314A1e2);
+    ico.setFoundersTokensWallet(0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111);
+    ico.setAdvisorsTokensWallet(0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57);
+    ico.setDevTokensWallet(0x8f840bB49CD83Baad5a228728b2a6edAc828f446);
 
     presale.lockChanges();
     ico.lockChanges();
 
-    // presale.transferOwnership(owner);
-    // ico.transferOwnership(owner);
-    // token.transferOwnership(owner);
+    presale.transferOwnership(owner);
+    ico.transferOwnership(owner);
+    token.transferOwnership(owner);
   }
 
 }
