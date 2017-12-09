@@ -145,7 +145,7 @@ contract CommonCrowdsale is Ownable, LockableChanges {
   function mintExtendedTokens() internal {
     uint extendedTokensPercent = bountyTokensPercent.add(devTokensPercent).add(advisorsTokensPercent).add(foundersTokensPercent);
     uint extendedTokens = minted.mul(extendedTokensPercent).div(PERCENT_RATE.sub(extendedTokensPercent));
-    uint summaryTokens = extendedTokens + minted;
+    uint summaryTokens = extendedTokens.add(minted);
 
     uint bountyTokens = summaryTokens.mul(bountyTokensPercent).div(PERCENT_RATE);
     mintAndSendTokens(bountyTokensWallet, bountyTokens);
