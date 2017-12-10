@@ -171,7 +171,7 @@ https://ropsten.etherscan.io/tx/0x9f71e63f29cc55984dd769f1c909d215c816452e82dace
 https://ropsten.etherscan.io/tx/0x7b6e3c3da778f6d106f1aa5c5adfa92e3d8fcb8b6588bf4fd039b2c5a1fc9b78
 * 0.01 Ether => 12.5 tokens, bonus = 25%, gas = 64504
 https://ropsten.etherscan.io/tx/0x76a9a25c81d3567cfad16f1722ea0186af59ff86286c60a8b4a849e5e94a30a7
-* Rejected transfer after the end of the presale, gas = 38861
+* Rejected purchase after the end of the presale, gas = 38861
 https://ropsten.etherscan.io/tx/0x26ffe31e4e33c83f5956b13fc32616e49f3b60755f098b2bd0da80ba88cd2f15
 
 #### Service operations
