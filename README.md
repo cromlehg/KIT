@@ -183,3 +183,27 @@ https://ropsten.etherscan.io/tx/0xcba76ea504510c02a8a4600aa4123fd1a1ce71f6fced4d
 https://ropsten.etherscan.io/tx/0xecad956ec8b7d38caf8d4e876c40d4bbc12843406b6fb91a894a1cd145f86372
 * Withdraw, gas = 94890
 https://ropsten.etherscan.io/tx/0x84c3752a75bdb320bc3fa37c3ddeba7c9b831ca64bf46529fd9bc5e27975ccba
+
+### Test audit (ICO)
+
+#### Purchasers
+* 0.1 Ether => 99.99 tokens, bonus = 10%, gas = 89851
+https://ropsten.etherscan.io/tx/0x173da1d366bc6996e625f0905b99ef8bafaa7c76acf04209b328ab1069a63826
+* 1 Ether => 954.45 tokens, bonus = 5%, gas = 60673
+https://ropsten.etherscan.io/tx/0x80ac08aa1a86af588cde748d8df887c74ca80faa4dd4fb83a317249bd133dd52
+* Rejected purchase after the end of the ICO, gas = 21774
+https://ropsten.etherscan.io/tx/0xf06e823abfbd9d94ed913252032c18835c0d9d4698368403b0bb27ac30727465
+
+#### Service operations
+* Change the ICO's start, gas = 28078
+https://ropsten.etherscan.io/tx/0xcb7f2b33b646a4915c555d44b6ff08bdd84649b78e1e6ea53b48729af735749b
+* Change the end time of the ICO, gas = 27735
+https://ropsten.etherscan.io/tx/0x6af9be68b698407db3c85a91bf647aa5fa5d268aa6cbd8ff5edeef1ce503f0fd
+* Finish minting, gas = 125497
+https://ropsten.etherscan.io/tx/0x34a1ec4997a00c3f60dcd982ab55df33e7514c9636042b1d9033751f6bba1624
+
+### Test audit (token transactions)
+* Transfer from developers' wallet to investor's wallet, gas = 23048
+https://ropsten.etherscan.io/tx/0x5b174ff12d72cab7c37ac3e264c651b1c0a8898e2ba2a4bd9d5052df0a73dcd7
+
+
