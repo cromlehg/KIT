@@ -73,7 +73,6 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _ETH Wallets_                : 
 
 _Milestones_
-
 1. 1 week                      : +42%
 2. 1 week                      : +25%
 3. 1 week                      : +11%
@@ -101,7 +100,7 @@ _Milestones_
 2. 1 week                      : +5%
 3. other                       : base price
 
-## Ropsten network configuration
+## Ropsten network configuration (test #1 - softcap reached)
 
 ### Crowdsale stages
 
@@ -125,7 +124,6 @@ _Milestones_
 * _Developers wallet_          : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
 
 _Milestones_
-
 1. 1 week                      : +42%
 2. 1 week                      : +25%
 3. 1 week                      : +11%
@@ -162,7 +160,6 @@ _Milestones_
 ### Test audit (Presale)
 
 #### Purchasers
-
 * 0.01 Ether => 14.2 tokens, bonus = 42%, gas = 133365
 https://ropsten.etherscan.io/tx/0x3d72a072e2dbfe873b1d427734ab6647d8d8fdf0503e2894eb204a0e03f5a02f
 * Rejected refund during the presale, gas = 22260
@@ -205,5 +202,76 @@ https://ropsten.etherscan.io/tx/0x34a1ec4997a00c3f60dcd982ab55df33e7514c9636042b
 ### Test audit (token transactions)
 * Transfer from developers' wallet to investor's wallet, gas = 23048
 https://ropsten.etherscan.io/tx/0x5b174ff12d72cab7c37ac3e264c651b1c0a8898e2ba2a4bd9d5052df0a73dcd7
+
+## Ropsten network configuration (test #2 - softcap not reached)
+
+### Crowdsale stages
+
+#### Presale
+* _Base price_                 : 1000 KIT per ETH
+* _Minimal insvested limit_    : 0.01 ETH
+* _Softcap_                    : 20 ETH
+* _Hardcap_                    : 63 000 ETH
+* _Founders_                   : 10% of total tokens
+* _Bounty_                     : 3% of total tokens
+* _Advisors_                   : 1% of total tokens
+* _Developers_                 : 4% of total tokens
+* _Start_                      : Wed, 20 Dec 2017 13:00:00 GMT
+* _End_                        : Thu, 25 Jan 2018 13:00:00 GMT
+* _Founders tokens wallet_     : 0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111
+* _Bounty tokens wallet_       : 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2
+* _Advisors tokens wallet_     : 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57
+* _Developers tokens wallet_   : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
+* _Contract manager_           : 0x55dd7A6353FC004B4F6Da9855F9403B35f4530B1
+* _ETH Wallets_                : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
+* _Developers wallet_          : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
+
+_Milestones_
+1. 1 week                      : +42%
+2. 1 week                      : +25%
+3. 1 week                      : +11%
+3. other                       : without bonus
+
+#### ICO
+* _Base price_                 : 909 KIT per ETH
+* _Minimal insvested limit_    : 0.01 ETH
+* _Hardcap_                    : 67 500 ETH
+* _Founders_                   : 10% of total tokens
+* _Bounty_                     : 3% of total tokens
+* _Advisors_                   : 1% of total tokens
+* _Developers_                 : 4% of total tokens
+* _Start_                      : Tue, 20 Feb 2018 13:00:00 GMT 
+* _End_                        : Tue, 20 Mar 2018 13:00:00 GMT
+* _Founders tokens wallet_     : 0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111
+* _Bounty tokens wallet_       : 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2
+* _Advisors tokens wallet_     : 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57
+* _Developers tokens wallet_   : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
+* _Contract manager_           : 0x55dd7A6353FC004B4F6Da9855F9403B35f4530B1
+* _ETH Wallets_                : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
+* _Developers wallet_          : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
+
+_Milestones_
+1. 1 week                      : +10%
+2. 1 week                      : +5%
+3. other                       : base price
+
+#### Links
+* _Token_   - https://ropsten.etherscan.io/address/0xc08419cc44383d068fc3d2b453882f5b10fd8269
+* _Presale_ - https://ropsten.etherscan.io/address/0x5388c893e23f0ab7d9509598ac21c1017b756a10
+
+### Test audit (Presale)
+
+#### Purchasers
+* 0.1 Ether => 142 tokens, bonus = 42%, gas = 133495
+https://ropsten.etherscan.io/tx/0xa98a8cba12d2aeaaf4ae9b4afed090eb605aec91f8f53b9980f1c5ffdcd3985c
+* Rejected refund during the presale, gas = 22290
+https://ropsten.etherscan.io/tx/0x75ed57826152b235f867b6a9702c1fe472b677f534857b8775453d340bca980a
+* Successful refund after presales end (softcap not reached), gas = 20503
+https://ropsten.etherscan.io/tx/0xb9e15a6729550569e1c42088caa4ee969048d841aa7b2905830bb9167cc0b0f8
+
+#### Service operations
+* Finish minting, gas = 37056
+https://ropsten.etherscan.io/tx/0xcb4308f4cf21f3363b4f31293a2358a6665dfe3ee9abe2fdc11c79a23c01d391
+
 
 
