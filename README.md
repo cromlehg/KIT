@@ -232,29 +232,6 @@ _Milestones_
 3. 1 week                      : +11%
 3. other                       : without bonus
 
-#### ICO
-* _Base price_                 : 909 KIT per ETH
-* _Minimal insvested limit_    : 0.01 ETH
-* _Hardcap_                    : 67 500 ETH
-* _Founders_                   : 10% of total tokens
-* _Bounty_                     : 3% of total tokens
-* _Advisors_                   : 1% of total tokens
-* _Developers_                 : 4% of total tokens
-* _Start_                      : Tue, 20 Feb 2018 13:00:00 GMT 
-* _End_                        : Tue, 20 Mar 2018 13:00:00 GMT
-* _Founders tokens wallet_     : 0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111
-* _Bounty tokens wallet_       : 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2
-* _Advisors tokens wallet_     : 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57
-* _Developers tokens wallet_   : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
-* _Contract manager_           : 0x55dd7A6353FC004B4F6Da9855F9403B35f4530B1
-* _ETH Wallets_                : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
-* _Developers wallet_          : 0x8f840bB49CD83Baad5a228728b2a6edAc828f446
-
-_Milestones_
-1. 1 week                      : +10%
-2. 1 week                      : +5%
-3. other                       : base price
-
 #### Links
 * _Token_   - https://ropsten.etherscan.io/address/0xc08419cc44383d068fc3d2b453882f5b10fd8269
 * _Presale_ - https://ropsten.etherscan.io/address/0x5388c893e23f0ab7d9509598ac21c1017b756a10
