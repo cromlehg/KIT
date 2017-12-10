@@ -161,7 +161,7 @@ _Milestones_
 
 ### Test audit (Presale)
 
-## Purchasers
+#### Purchasers
 
 * 0.01 Ether => 14.2 tokens, bonus = 42%, gas = 133365
 https://ropsten.etherscan.io/tx/0x3d72a072e2dbfe873b1d427734ab6647d8d8fdf0503e2894eb204a0e03f5a02f
@@ -174,7 +174,7 @@ https://ropsten.etherscan.io/tx/0x76a9a25c81d3567cfad16f1722ea0186af59ff86286c60
 * Rejected transfer after the end of the presale, gas = 38861
 https://ropsten.etherscan.io/tx/0x26ffe31e4e33c83f5956b13fc32616e49f3b60755f098b2bd0da80ba88cd2f15
 
-## Service operations
+#### Service operations
 * Change the presale's start, gas = 28386
 https://ropsten.etherscan.io/tx/0x2e15a55ea455a61f5eec330adff4ffb0d3e13ac0002d9176bf0878c286844d5a
 * Change softcap, gas = 27238
