@@ -509,11 +509,11 @@ contract ICO is CommonCrowdsale {
     addBonus(7,5);
     start = 1519131600;
     end = 1521550800;
-    wallet = 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4;
-    bountyTokensWallet = 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2;
-    foundersTokensWallet = 0xf8b4Da46E85e43c47EBbF73ac8C6746fE3d3f111;
-    advisorsTokensWallet = 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57;
-    devTokensWallet = 0x8f840bB49CD83Baad5a228728b2a6edAc828f446;
+    wallet = 0x72EcAEB966176c50CfFc0Db53E4A2D3DbC0d538B;
+    bountyTokensWallet = 0x7E513B54e3a45B60d6f92c6CECE10C68977EEA8c;
+    foundersTokensWallet = 0x4227859C5A9Bb4391Cc4735Aa655e980a3DD4380;
+    advisorsTokensWallet = 0x6e740ef8618A7d822238F867c622373Df8B54a22;
+    devTokensWallet = 0xCaDca9387E12F55997F46870DA28F0af1626A6d4;
   }
 
   function finishMinting() public onlyOwner {

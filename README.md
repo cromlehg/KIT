@@ -65,12 +65,12 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Developers_                 : 4% of total tokens
 * _Start_                      : Wed, 20 Dec 2017 13:00:00 GMT 
 * _End_                        : Thu, 25 Jan 2018 13:00:00 GMT
-* _Founders tokens wallet_     : 
-* _Bounty tokens wallet_       : 
-* _Advisors tokens wallet_     : 
-* _Developers tokens wallet_   : 
-* _Contract manager_           : 
-* _ETH Wallets_                : 
+* _Founders tokens wallet_     : 0x4227859C5A9Bb4391Cc4735Aa655e980a3DD4380
+* _Bounty tokens wallet_       : 0x7E513B54e3a45B60d6f92c6CECE10C68977EEA8c
+* _Advisors tokens wallet_     : 0x6e740ef8618A7d822238F867c622373Df8B54a22
+* _Developers tokens wallet_   : 0xCaDca9387E12F55997F46870DA28F0af1626A6d4
+* _Contract manager_           : 0x69F5C3850D1f1d5BAeAe71E947e915A539088Bb0
+* _ETH Wallets_                : 0x72EcAEB966176c50CfFc0Db53E4A2D3DbC0d538B
 
 _Milestones_
 1. 1 week                      : +42%
@@ -88,12 +88,12 @@ _Milestones_
 * _Developers_                 : 4% of total tokens
 * _Start_                      : Tue, 20 Feb 2018 13:00:00 GMT 
 * _End_                        : Tue, 20 Mar 2018 13:00:00 GMT
-* _Founders tokens wallet_     : 
-* _Bounty tokens wallet_       : 
-* _Advisors tokens wallet_     : 
-* _Developers tokens wallet_   : 
-* _Contract manager_           : 
-* _ETH Wallets_                : 
+* _Founders tokens wallet_     : 0x4227859C5A9Bb4391Cc4735Aa655e980a3DD4380
+* _Bounty tokens wallet_       : 0x7E513B54e3a45B60d6f92c6CECE10C68977EEA8c
+* _Advisors tokens wallet_     : 0x6e740ef8618A7d822238F867c622373Df8B54a22
+* _Developers tokens wallet_   : 0xCaDca9387E12F55997F46870DA28F0af1626A6d4
+* _Contract manager_           : 0x69F5C3850D1f1d5BAeAe71E947e915A539088Bb0
+* _ETH Wallets_                : 0x72EcAEB966176c50CfFc0Db53E4A2D3DbC0d538B
 
 _Milestones_
 1. 1 week                      : +10%
