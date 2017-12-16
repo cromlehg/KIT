@@ -15,8 +15,7 @@ contract Deployer is Ownable {
   KITToken public token;
 
   function deploy() public onlyOwner {
-    owner = 0x55dd7A6353FC004B4F6Da9855F9403B35f4530B1;
-    // owner = msg.sender;
+    owner = 0x69F5C3850D1f1d5BAeAe71E947e915A539088Bb0;
 
     token = new KITToken();
 
