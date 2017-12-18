@@ -19,10 +19,10 @@ Contract mint bounty, advisors and founders tokens after each stage finished.
 Crowdsale contracts have special function to retrieve transferred in errors tokens.
 
 ### Contracts 
-1. _KITToken_ - 
-2. _Presale_ - 
-3. _ICO_ - 
-4. _Deployer_ - 
+1. _KITToken_ - https://etherscan.io/address/0x5160680fb520e41f49a8411dbd0592b730f5480e
+2. _Presale_ - https://etherscan.io/address/0x720608228bda773fe22e816ee72463040f11c19e
+3. _ICO_ - https://etherscan.io/address/0x6e08a8b4da2a13c655af2dd74f7bdb979efe141b
+4. _Deployer_ - https://etherscan.io/address/0x766a0518ce0d022247d55d068d0b23db0e5ca7e5
 
 ### How to manage contract
 To start working with contract you should follow next steps:
