@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="imagetoolbar" content="no">
+    <meta name="msthemecompatible" content="no">
+    <meta name="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="application-name" content="">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link href="app.css" rel="stylesheet"></head>
+  <body class="page" style="margin:0 auto;padding:20px;max-width:760px;font-family:&quot;Open Sans&quot;, sans-serif;">
+    <h1>Основы работы со смарт-контрактом</h1>
+    <h2>Взаимодействие со смарт-контрактом</h2>
+    <p>Взаимодействие со смарт-контрактом происходит посредством вызова функций контракта с указанием параметров. Для взаимодействия необходимо знать адрес смарт-контракта. А на основе адреса нужно получить ABI-интерфейс. По ABI интерфейсу можно вызвать целевую функцию.</p>
+    <h2>Получение ABI интерфейса</h2>
+    <p>Для получения интерфейса вам необходимо:</p>
+    <ol>
+      <li>
+        <p>открыть <a href="https://etherscan.io">etherscan.io</a></p>
+      </li>
+      <li>
+        <p>В правом верхнем углу в окне с надписью «search by address» ввести адрес целевого смарт-контракта и нажать «go»</p>
+      </li>
+      <li>
+        <p>Затем нажать на вкладку «contract source»:
+          <div class="image"><img src="images/how-to-find-contract-source.png" alt="" style="width:100%;height:auto;"></div>
+        </p>
+      </li>
+      <li>
+        <p>Найти поле с надписью «Contract ABI» и нажать на кнопку «copy» справа от надписи</p>
+        <p>Интерфейс ABI контракта теперь скопирован в буффер обмена.</p>
+        <div class="image"><img src="images/how-to-find-contract-abi.png" alt="" style="width:100%;height:auto;"></div>
+      </li>
+    </ol>
+    <h2>Вызов функции</h2>
+    <ol>
+      <li>
+        <p>Откройте кошелек <a href="https://www.myetherwallet.com">myetherwallet.com</a></p>
+      </li>
+      <li>
+        <p>Выберите вкладку «контракты» и заполните поля <b>адрес</b> и <b>ABI</b> (мы его получали в предыдущей части инструкции) и нажмите на «подключиться»
+          <div class="image"><img src="images/how-to-interact-with-contract.png" alt="" style="width:100%;height:auto;"></div>
+        </p>
+      </li>
+      <li>
+        <p>После этого в нам станет доступен список функций контракта. Выбираем целевую функцию и заполняем параметры
+          <div class="image"><img src="images/how-to-call-a-function.png" alt="" style="width:100%;height:auto;"></div>
+        </p>
+      </li>
+      <li>
+        <p>После выбора функции и заполнения параметров получите доступ к кошельку-владельцу смарт-контракта удобным вам способом и нажмите на кнопку «записать»  и «Да, я уверен, выполнить транзакцию».</p>
+        <p><b>Внимание!</b> Перед тем как нажать «записать» внимательно проверьте введенные данные. Часто формат данных отличается от привычного пользователю вида.
+          <div class="image"><img src="images/how-to-gain-an-access-to-a-function.png" alt="" style="width:100%;height:auto;"></div>
+        </p>
+      </li>
+      <li>
+        <p>После этого внизу появится зеленая панель со ссылкой «Verify transaction». Нажмите на эту ссылку и откроется Etherscan. Ждите пока транзакция не выполнится.</p>
+      </li>
+    </ol>
+    <h2>Как посмотреть интерфейс смарт-контракта</h2>
+    <ol>
+      <li>
+        <p>открыть <a href="https://etherscan.io">etherscan.io</a></p>
+      </li>
+      <li>
+        <p>В правом верхнем углу в окне с надписью «search by address» ввести адрес целевого смарт-контракта и нажать «go»</p>
+      </li>
+      <li>
+        <p>Появится окно в котором надо нажать на вкладку «Read smart contract»
+          <div class="image"><img src="images/how-to-read-contract.png" alt="" style="width:100%;height:auto;"></div>
+        </p>
+      </li>
+    </ol>
+    <h2>Подготовка к работе — только если контракт заливали самостоятельно!</h2>
+    <p>Адрес смарт-контракта конфигуратора: <b>0x766a0518ce0d022247d55d068d0b23db0e5ca7e5</b></p>
+    <p>Для начала работы со смарт-контрактами их необходимо проинициализировать. Для этого нужно у контракта-конфигуратора вызывать функцию deploy. Во время ее вызова MyEtherWalet может не определить количество газа, необходимое для вызова функции. И поэтому поставит «-1».
+      <div class="image"><img src="images/how-to-deploy.png" alt="" style="width:100%;height:auto;"></div>
+    </p>
+    <p>Исправьте число на 4600000 и нажмите  «Записать транзакцию» а затем «Да, я уверен! Выполнить транзакцию».
+      <div class="image"><img src="images/how-to-confirm-transaction.png" alt="" style="width:100%;height:auto;"></div>
+    </p>
+    <p>После выполнения транзакции (вам нужно дождаться ее выполнения). Вы можете открыть интерфейс смарт-контракта и вы увидите 4 поля с ненулевыми адресами:
+      <div class="image"><img src="images/how-to-check-deployer.png" alt="" style="width:100%;height:auto;"></div>
+    </p>
+    <p>Важные для нас адреса смарт-контрактов:</p>
+    <ul>
+      <li>
+        <p><b>Presale</b> — адрес Presale контракта. Именно на него инвесторы должны закидывать эфир во время Presale-распродажи. Все даты распродажи, а также цена и функция завершения распродажи вызываются по этому адресу.</p>
+      </li>
+      <li>
+        <p><b>ICO</b> - адрес ICO контракта. На него инвесторы должны закидывать эфир во время ICO-распродажи. Все даты распродажи, а также цена и функция завершения распродажи вызываются по этому адресу.</p>
+      </li>
+      <li>
+        <p><b>Token</b> — адрес смарт-контракта токена. Этот адрес пользователи будут добавлять себе в кошелек для отображения токена.</p>
+      </li>
+    </ul>
+    <h2>Конфигурация</h2>
+    <h3>Адреса кошельков:</h3>
+    <p>
+      <table style="width:100%;">
+        <tr>
+          <th colspan="2" style="text-align:left;">Presale</th>
+        </tr>
+        <tr>
+          <td>ETH Wallet</td>
+          <td>0x72EcAEB966176c50CfFc0Db53E4A2D3DbC0d538B</td>
+        </tr>
+        <tr>
+          <td>Founders tokens wallet</td>
+          <td>0x4227859C5A9Bb4391Cc4735Aa655e980a3DD4380</td>
+        </tr>
+        <tr>
+          <td>Bounty tokens wallet</td>
+          <td>0x7E513B54e3a45B60d6f92c6CECE10C68977EEA8c</td>
+        </tr>
+        <tr>
+          <td>Advisors tokens wallet</td>
+          <td>0x6e740ef8618A7d822238F867c622373Df8B54a22</td>
+        </tr>
+        <tr>
+          <td>Developers tokens wallet</td>
+          <td>0xCaDca9387E12F55997F46870DA28F0af1626A6d4</td>
+        </tr>
+        <tr>
+          <td>Contract manager</td>
+          <td>0x69F5C3850D1f1d5BAeAe71E947e915A539088Bb0</td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <table style="width:100%;">
+        <tr>
+          <th colspan="2" style="text-align:left;">ICO</th>
+        </tr>
+        <tr>
+          <td>ETH Wallet</td>
+          <td>0x72EcAEB966176c50CfFc0Db53E4A2D3DbC0d538B</td>
+        </tr>
+        <tr>
+          <td>Founders tokens wallet</td>
+          <td>0x4227859C5A9Bb4391Cc4735Aa655e980a3DD4380</td>
+        </tr>
+        <tr>
+          <td>Bounty tokens wallet</td>
+          <td>0x7E513B54e3a45B60d6f92c6CECE10C68977EEA8c</td>
+        </tr>
+        <tr>
+          <td>Advisors tokens wallet</td>
+          <td>0x6e740ef8618A7d822238F867c622373Df8B54a22</td>
+        </tr>
+        <tr>
+          <td>Developers tokens wallet</td>
+          <td>0xCaDca9387E12F55997F46870DA28F0af1626A6d4</td>
+        </tr>
+        <tr>
+          <td>Contract manager</td>
+          <td>0x69F5C3850D1f1d5BAeAe71E947e915A539088Bb0</td>
+        </tr>
+      </table>
+    </p>
+    <h3>Адреса контрактов:</h3>
+    <table>
+      <tr>
+        <td>Токен</td>
+        <td><a href="https://etherscan.io/token/0x5160680fb520e41f49a8411dbd0592b730f5480e">0x5160680fb520e41f49a8411dbd0592b730f5480e</a></td>
+      </tr>
+      <tr>
+        <td>Presale</td>
+        <td><a href="https://etherscan.io/address/0x720608228bda773fe22e816ee72463040f11c19e">0x720608228bda773fe22e816ee72463040f11c19e</a></td>
+      </tr>
+      <tr>
+        <td>ICO</td>
+        <td><a href="https://etherscan.io/address/0x6e08a8b4da2a13c655af2dd74f7bdb979efe141b">0x6e08a8b4da2a13c655af2dd74f7bdb979efe141b</a></td>
+      </tr>
+    </table>
+    <h2>Рекомендованные значения для отправки транзакции инвестора</h2>
+    <p>Обычно кошельки сами способны определить количество газа и цену, но не всегда. Поэтому вводятся рекомендованные значения:</p>
+    <ol>
+      <li>Меньше чем <b>0.1 Eth</b> контракт не принимает.</li>
+      <li>Количество газа - <b>250 000</b></li>
+    </ol>
+    <h2>Памятка владельцу контрактов</h2>
+    <p>Владелец контрактов должен после каждой распродажи вызвать функцию <b>finishMinting()</b> у соответствующего контракта распродажи. А именно:</p>
+    <ol>
+      <li>
+        <p>По окончанию распродажи у контракта Presale вызвать <b>finishMinting()</b><br>Адрес контракта: <b>0x720608228bda773fe22e816ee72463040f11c19e</b></p>
+      </li>
+      <li>
+        <p>По окончанию распродажи у контракта ICO вызвать <b>finishMinting()</b><br>Адрес контракта: <b>0x766a0518ce0d022247d55d068d0b23db0e5ca7e5</b></p>
+      </li>
+      <li>
+        <p>Для вывода средств с контракта <b>Presale</b> нужно вызвать функцию <b>withdraw()</b>.<br>Во время <b>ICO</b> средства выводятся автоматически.</p>
+      </li>
+    </ol>
+    <p>Перед вызовом убедитесь, что адрес контракта соответствует текущей распродаже!</p>
+    <h2>Расположение адресов на странице контракта в etherscan.io</h2>
+    <h3><a href="https://etherscan.io/address/0x720608228bda773fe22e816ee72463040f11c19e#readContract">Presale</a></h3>
+    <p>
+      <div class="image"><img src="images/address-presale.png" alt="" style="width:100%;height:auto;"></div>
+    </p>
+    <h3><a href="https://etherscan.io/address/0x6e08a8b4da2a13c655af2dd74f7bdb979efe141b#readContract">ICO</a></h3>
+    <p>
+      <div class="image"><img src="images/address-ico.png" alt="" style="width:100%;height:auto;"></div>
+    </p>
+  <script type="text/javascript" src="bundle.js"></script></body>
+</html>
